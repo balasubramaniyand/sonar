@@ -1,0 +1,61 @@
+#--------------------------------------------------------------------------------------------------
+# DATABASE CONFIGURATION
+
+# JDBC user credentials
+sonar.jdbc.username=sonaruser
+sonar.jdbc.password=sonar
+
+# PostgreSQL database connection
+sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
+
+# Connection pool settings
+sonar.jdbc.maxActive=60
+sonar.jdbc.minIdle=10
+sonar.jdbc.maxWait=8000
+
+#--------------------------------------------------------------------------------------------------
+# WEB SERVER CONFIGURATION
+
+# JVM options for web server
+sonar.web.javaOpts=-Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError
+
+# Additional JVM options
+sonar.web.javaAdditionalOpts=-server
+
+# Binding IP address (default to all available addresses)
+sonar.web.host=0.0.0.0
+
+# TCP port for incoming HTTP connections
+sonar.web.port=9000
+
+# Session timeout duration (in minutes)
+sonar.web.sessionTimeoutInMinutes=4320
+
+#--------------------------------------------------------------------------------------------------
+# LOGGING CONFIGURATION
+
+# Global log level
+sonar.log.level=INFO
+
+# Path to log files
+sonar.path.logs=logs
+
+# Rolling policy for log files
+sonar.log.rollingPolicy=time:yyyy-MM-dd
+
+# Maximum number of log files to keep
+sonar.log.maxFiles=7
+
+# Access log configuration
+sonar.web.accessLogs.enable=true
+sonar.web.accessLogs.pattern=%h %l %u [%t] "%r" %s %b "%i{Referer}" "%i{User-Agent}" "%reqAttribute{ID}"
+
+#--------------------------------------------------------------------------------------------------
+# OTHERS
+
+# Paths to persistent data files and temporary files
+sonar.path.data=data
+sonar.path.temp=temp
+
+# Telemetry
+sonar.telemetry.enable=true
